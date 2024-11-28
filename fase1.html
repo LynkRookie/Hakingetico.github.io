@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 1: Reconocimiento - Proyecto de Ciberseguridad</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="css/Universidad-Santo-Tomas (1).png" alt="Logo Universidad Santo Tomás">
+                    <div>
+                        <h1 class="site-title">Ciberseguridad</h1>
+                        <p class="site-subtitle">Universidad Santo Tomás</p>
+                    </div>
+                </div>
+                <div class="student-info">
+                    <p><strong>Estudiantes:</strong> Cristóbal Sáez Badilla y Damian Jinel Cortes</p>
+                    <p><strong>Correos:</strong> <a href="mailto:cristobal.saez@usm.cl">cristobal.saez@usm.cl</a> / <a href="mailto:damian.jinel@usm.cl">damian.jinel@usm.cl</a></p>
+                    <p><strong>Profesor:</strong> Marco Vega</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Portada</a></li>
+                <li><a href="fase1.html">Fase 1: Reconocimiento</a></li>
+                <li><a href="fase2.html">Fase 2: Scanning</a></li>
+                <li><a href="fase3.html">Fase 3: Acceso</a></li>
+                <li><a href="fase4.html">Fase 4: Mantenimiento de Acceso</a></li>
+                <li><a href="fase5.html">Fase 5: Borrado de Huellas</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="content">
+                <h1>Fase 1: Reconocimiento</h1>
+                <p>En esta fase, el atacante se enfoca en obtener información sobre el objetivo sin interactuar directamente con él. El objetivo es recopilar datos sobre las posibles vulnerabilidades que podrían explotarse en fases posteriores.</p>
+
+                <section>
+                    <h2>Herramientas de Reconocimiento</h2>
+                    <div class="card">
+                        <h3 class="card-title">1. Nmap</h3>
+                        <p>Una de las herramientas más populares para el escaneo de puertos y detección de servicios en un objetivo.</p>
+                        <a href="https://nmap.org/download.html" target="_blank">Descargar Nmap</a>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">2. Whois</h3>
+                        <p>Herramienta que permite consultar información de dominio, incluyendo registros de IPs y propietarios.</p>
+                        <a href="https://whois.domaintools.com" target="_blank">Visitar Whois</a>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">3. Shodan</h3>
+                        <p>Motor de búsqueda para dispositivos conectados a Internet. Permite encontrar vulnerabilidades públicas.</p>
+                        <a href="https://www.shodan.io" target="_blank">Visitar Shodan</a>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Comandos de Reconocimiento</h2>
+                    <pre>
+nmap -sP [IP objetivo] (Escaneo de red)
+whois [dominio] (Consultar información de dominio)
+shodan search [consulta] (Buscar dispositivos expuestos)
+                    </pre>
+                </section>
+
+                <section>
+                    <h2>Video de Demostración</h2>
+                    <p>En el siguiente video se realiza una demostración de la herramienta Nmap para escanear puertos en un objetivo:</p>
+                    <div class="card">
+                        <video controls>
+                            <source src="assets/videos/nmap-demo.mp4" type="video/mp4">
+                            Tu navegador no soporta el formato de video.
+                        </video>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Recomendaciones para Reducir Riesgos</h2>
+                    <p>Para prevenir ataques durante la fase de Reconocimiento, es importante realizar prácticas de seguridad como:</p>
+                    <ul>
+                        <li>Uso de firewalls</li>
+                        <li>Mantener sistemas actualizados</li>
+                        <li>Ocultar servicios sensibles</li>
+                        <li>Implementar políticas de seguridad robustas</li>
+                        <li>Monitorear y registrar actividades sospechosas</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Universidad Santo Tomás. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

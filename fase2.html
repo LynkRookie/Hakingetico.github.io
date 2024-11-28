@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 2: Scanning - Proyecto de Ciberseguridad</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="css/Universidad-Santo-Tomas (1).png" alt="Logo Universidad Santo Tomás">
+                    <div>
+                        <h1 class="site-title">Ciberseguridad</h1>
+                        <p class="site-subtitle">Universidad Santo Tomás</p>
+                    </div>
+                </div>
+                <div class="student-info">
+                    <p><strong>Estudiantes:</strong> Cristóbal Sáez Badilla y Damian Jinel Cortes</p>
+                    <p><strong>Correos:</strong> <a href="mailto:cristobal.saez@usm.cl">cristobal.saez@usm.cl</a> / <a href="mailto:damian.jinel@usm.cl">damian.jinel@usm.cl</a></p>
+                    <p><strong>Profesor:</strong> Marco Vega</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Portada</a></li>
+                <li><a href="fase1.html">Fase 1: Reconocimiento</a></li>
+                <li><a href="fase2.html">Fase 2: Scanning</a></li>
+                <li><a href="fase3.html">Fase 3: Acceso</a></li>
+                <li><a href="fase4.html">Fase 4: Mantenimiento de Acceso</a></li>
+                <li><a href="fase5.html">Fase 5: Borrado de Huellas</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="content">
+                <h1>Fase 2: Scanning</h1>
+                <p>En esta etapa, se recopila información detallada sobre los sistemas objetivo para identificar vulnerabilidades explotables. Se analizan puertos abiertos, servicios activos y versiones, junto con configuraciones potencialmente inseguras.</p>
+
+                <section>
+                    <h2>Herramientas de Scanning</h2>
+                    <div class="card">
+                        <h3 class="card-title">Nmap</h3>
+                        <p>Herramienta poderosa para el escaneo de puertos y servicios, permite identificar sistemas operativos,
+                             servicios en ejecución y detectar configuraciones de red. Soporta scripts personalizados para análisis más avanzados.</p>
+                        <a href="https://nmap.org" target="_blank">Más sobre Nmap</a>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">OpenVAS</h3>
+                        <p>Escáner de vulnerabilidades que identifica problemas específicos, como software desactualizado, 
+                            configuraciones incorrectas o exploits conocidos, generando informes detallados para priorizar acciones correctivas.</p>
+                        <a href="https://www.openvas.org" target="_blank">Más sobre OpenVAS</a>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Metasploit</h3>
+                        <p>Un framework de pruebas de penetración que incluye módulos para escaneo, explotación y post-explotación. 
+                            Permite realizar análisis avanzados e integrar herramientas externas para una evaluación completa.</p>
+                        <a href="https://www.metasploit.com" target="_blank">Más sobre Metasploit</a>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Comandos de Nmap</h2>
+                    <pre>
+                        nmap -sS 192.168.1.1
+                        nmap -O 192.168.1.1
+                        nmap -sV 192.168.1.1
+                        nmap -A 192.168.1.1
+                    </pre>
+                </section>
+
+                <section>
+                    <div class="card">
+                        <h2>Video Escaneo con Nmap</h2>
+                        <video controls>
+                            <source src="assets/videos/nmap-demo.mp4" type="video/mp4">
+                            Tu navegador no soporta el formato de video.
+                        </video>
+                        <p><a href="https://www.loom.com/share/xxxxxx" target="_blank">Ver Video: Escaneo con Nmap</a></p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Universidad Santo Tomás. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
