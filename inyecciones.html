@@ -19,7 +19,7 @@
                 </div>
                 <div class="student-info">
                     <p><strong>Estudiantes:</strong> Cristóbal Sáez Badilla y Damian Jinel Cortes</p>
-                    <p><strong>Correos:</strong> <a href="mailto:cristobal.saez@usm.cl">cristobal.saez@usm.cl</a> / <a href="mailto:damian.cortes@usm.cl">damian.cortes@usm.cl</a></p>
+                    <p><strong>Correos:</strong> <a href="mailto:c.saez41@alumnossantotomas.cl">c.saez41@alumnossantotomas.cl</a> / <a href="mailto:d.jinel@alumnossantotomas.cl">d.jinel@alumnossantotomas.cl</a></p>
                     <p><strong>Profesor:</strong> Marco Vega</p>
                 </div>
             </div>
@@ -29,13 +29,70 @@
     <nav>
         <div class="container">
             <ul>
-                <li><a href="index.html">Portada</a></li>
-                <li><a href="fase1.html">Fase 1: Reconocimiento</a></li>
-                <li><a href="fase2.html">Fase 2: Scanning</a></li>
-                <li><a href="fase3.html">Fase 3: Acceso</a></li>
-                <li><a href="fase4.html">Fase 4: Mantenimiento de Acceso</a></li>
-                <li><a href="fase5.html">Fase 5: Borrado de Huellas</a></li>
-                <li><a href="inyecciones.html">Inyecciones y Ataques XSS</a></li>
+                <li>
+                    <a href="index.html">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                        </svg>
+                        Portada
+                    </a>
+                </li>
+                <li>
+                    <a href="fase1.html">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.3-4.3"></path>
+                        </svg>
+                        Fase 1: Reconocimiento
+                    </a>
+                </li>
+                <li>
+                    <a href="fase2.html">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="4 17 10 11 4 5"></polyline>
+                            <line x1="12" x2="20" y1="19" y2="19"></line>
+                        </svg>
+                        Fase 2: Scanning
+                    </a>
+                </li>
+                <li>
+                    <a href="fase3.html">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4"></path>
+                            <path d="m21 2-9.6 9.6"></path>
+                            <circle cx="7.5" cy="15.5" r="5.5"></circle>
+                        </svg>
+                        Fase 3: Acceso
+                    </a>
+                </li>
+                <li>
+                    <a href="fase4.html">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                            <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
+                            <path d="M3 12A9 3 0 0 0 21 12"></path>
+                        </svg>
+                        Fase 4: Mantenimiento de Acceso
+                    </a>
+                </li>
+                <li>
+                    <a href="fase5.html">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"></path>
+                            <path d="M22 21H7"></path>
+                            <path d="m5 11 9 9"></path>
+                        </svg>
+                        Fase 5: Borrado de Huellas
+                    </a>
+                </li>
+                <li>
+                    <a href="inyecciones.html">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                        Inyecciones y Ataques XSS
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -54,6 +111,8 @@
                             <form id="sql-vulnerable-form" action="procesar_sql_vulnerable.php" method="POST">
                                 <label for="sql-vulnerable-username">Usuario:</label>
                                 <input type="text" id="sql-vulnerable-username" name="sql-vulnerable-username" required>
+                                <label for="sql-vulnerable-password">Contraseña:</label>
+                                <input type="password" id="sql-vulnerable-password" name="sql-vulnerable-password" required>
                                 <button type="submit">Enviar (Vulnerable)</button>
                             </form>
                         </div>
@@ -62,6 +121,8 @@
                             <form id="sql-secure-form" action="procesar_sql_seguro.php" method="POST">
                                 <label for="sql-secure-username">Usuario:</label>
                                 <input type="text" id="sql-secure-username" name="sql-secure-username" required>
+                                <label for="sql-secure-password">Contraseña:</label>
+                                <input type="password" id="sql-secure-password" name="sql-secure-password" required>
                                 <button type="submit">Enviar (Seguro)</button>
                             </form>
                         </div>
@@ -104,7 +165,9 @@
         document.getElementById('sql-secure-form').addEventListener('submit', function(e) {
             e.preventDefault();
             var username = document.getElementById('sql-secure-username').value;
-            if (username.includes("'") || username.includes('"') || username.includes(';')) {
+            var password = document.getElementById('sql-secure-password').value;
+            if (username.includes("'") || username.includes('"') || username.includes(';') ||
+                password.includes("'") || password.includes('"') || password.includes(';')) {
                 alert('Entrada potencialmente peligrosa detectada');
             } else {
                 this.submit();
