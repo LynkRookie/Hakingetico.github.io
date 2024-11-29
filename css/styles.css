@@ -13,7 +13,10 @@
   --accent: #0d1219;
   --radius: 0.5rem;
 }
-
+.highlighted-subtitle {
+  font-weight: bold;
+  color: var(--primary);
+}
 * {
   margin: 0;
   padding: 0;
