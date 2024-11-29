@@ -13,6 +13,10 @@
     --accent: #0d1219;
     --radius: 0.5rem;
 }
+.highlighted-subtitle {
+  font-weight: bold;
+  color: var(--primary);
+}
 .video-container {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
