@@ -1,247 +1,253 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --background: #0a0f16;
-  --foreground: #ffffff;
-  --muted: #9ca3af;
-  --muted-foreground: #6b7280;
-  --border: #1a2433;
-  --input: #1f2937;
-  --primary: #1ed6ff;
-  --primary-foreground: #030712;
-  --secondary: #1e90ff;
-  --accent: #0d1219;
-  --radius: 0.5rem;
-}
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  height: 0;
-  overflow: hidden;
+    --background: #0a0f16;
+    --foreground: #ffffff;
+    --muted: #9ca3af;
+    --muted-foreground: #6b7280;
+    --border: #1a2433;
+    --input: #1f2937;
+    --primary: #1ed6ff;
+    --primary-foreground: #030712;
+    --secondary: #1e90ff;
+    --accent: #0d1219;
+    --radius: 0.5rem;
 }
 
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-.highlighted-subtitle {
-  font-weight: bold;
-  color: var(--primary);
-}
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--background);
-  color: var(--foreground);
-  line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.5;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 header {
-  background-color: var(--accent);
-  border-bottom: 1px solid var(--border);
-  padding: 1rem 0;
+    background-color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
 }
 
 .header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .logo img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 2px solid rgba(30, 214, 255, 0.2);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid rgba(30, 214, 255, 0.2);
 }
 
 .site-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--foreground);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--foreground);
 }
 
 .site-subtitle {
-  color: var(--primary);
-  font-size: 0.875rem;
+    color: var(--primary);
+    font-size: 0.875rem;
 }
 
 .student-info {
-  text-align: right;
-  font-size: 0.875rem;
-  color: var(--muted);
+    text-align: right;
+    font-size: 0.875rem;
+    color: var(--muted);
 }
 
 nav {
-  background-color: rgba(13, 18, 25, 0.5);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+    background-color: rgba(13, 18, 25, 0.5);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
 }
 
 nav ul {
-  display: flex;
-  list-style-type: none;
-  padding: 0.5rem 0;
+    display: flex;
+    list-style-type: none;
+    padding: 0.5rem 0;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 nav ul li a {
-  color: var(--muted);
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius);
-  transition: background-color 0.3s, color 0.3s;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 nav ul li a:hover {
-  background-color: var(--border);
-  color: var(--primary);
+    background-color: var(--border);
+    color: var(--primary);
 }
 
 main {
-  padding: 2rem 0;
+    padding: 2rem 0;
 }
 
 .content {
-  background-color: var(--accent);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background-color: var(--accent);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
 }
 
 h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  background: linear-gradient(to right, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+    font-size: 2rem;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 h2 {
-  font-size: 1.5rem;
-  color: var(--foreground);
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--foreground);
 }
 
 h3 {
-  font-size: 1.25rem;
-  color: var(--foreground);
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    color: var(--foreground);
 }
 
 p {
-  margin-bottom: 1rem;
-  color: var(--muted);
-}
-
-a {
-  color: var(--primary);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-ul, ol {
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-pre {
-  background-color: var(--background);
-  border-radius: var(--radius);
-  padding: 1rem;
-  overflow-x: auto;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 0.875rem;
-  color: var(--muted);
+    margin-bottom: 1rem;
+    color: var(--muted);
 }
 
 .card {
-  background-color: rgba(13, 18, 25, 0.5);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--foreground);
+    background-color: rgba(13, 18, 25, 0.5);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .students {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
 .student {
-  text-align: center;
+    text-align: center;
 }
 
 .student-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  border: 2px solid rgba(30, 214, 255, 0.2);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 2px solid rgba(30, 214, 255, 0.2);
 }
 
 footer {
-  background-color: var(--accent);
-  border-top: 1px solid var(--border);
-  text-align: center;
-  padding: 1rem 0;
-  font-size: 0.875rem;
-  color: var(--muted);
+    background-color: var(--accent);
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.875rem;
+    color: var(--muted);
+}
+
+.hidden {
+    display: none;
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.form-wrapper {
+    flex: 1;
+    min-width: 300px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    color: var(--muted);
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    background-color: var(--input);
+    border: 1px solid var(--border);
+    color: var(--foreground);
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--secondary);
 }
 
 @media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-  .student-info {
-    text-align: left;
-    margin-top: 1rem;
-  }
+    .student-info {
+        text-align: left;
+        margin-top: 1rem;
+    }
 
-  nav ul {
-    flex-wrap: wrap;
-  }
+    nav ul {
+        flex-direction: column;
+    }
 
-  nav ul li {
-    width: 50%;
-  }
+    nav ul li {
+        width: 100%;
+        margin-right: 0;
+    }
 }
