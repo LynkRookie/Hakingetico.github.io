@@ -93,8 +93,6 @@
                         Inyecciones y Ataques XSS
                     </a>
                 </li>
-
-
             </ul>
         </div>
     </nav>
@@ -103,64 +101,116 @@
         <div class="container">
             <div class="content">
                 <h1>Fase 3: Acceso</h1>
-                <p>En esta etapa, el atacante intenta explotar vulnerabilidades específicas para obtener acceso al sistema o red. 
-                    Aquí es donde el atacante "rompe" la seguridad y compromete un recurso</p>
-                <h1>¿Cómo funciona?</h1>
-                <p><span class="highlighted-subtitle">Explotación directa de vulnerabilidades:</span> El atacante utiliza errores o configuraciones inseguras en software, 
-                    sistemas operativos o aplicaciones para acceder al sistema.
-                </p>
-                <p><span class="highlighted-subtitle">Exploración de red: </span> Determina la topología de la red, detecta dispositivos conectados y
-                     verifica si están Manipulación de datos: Se aprovecha de entradas inseguras, como formularios web, para inyectar código o manipular las operaciones del sistema.
-                     Desbordamiento de memoria: Se envía más información de la que un programa puede manejar, causando fallos que el atacante puede controlar.                     
-                </p>
-                <p><span class="highlighted-subtitle">Objetivos principales:</span>
-                    Obtener acceso inicial al sistema.
-                    Escalar privilegios para controlar funciones administrativas.
-                    Acceder a datos sensibles, recursos del sistema, o funcionalidades clave.                    
-                </p>
+                <p>En esta fase, el atacante intenta explotar las vulnerabilidades descubiertas para obtener acceso a los recursos del sistema, como servidores, bases de datos o aplicaciones. Una vez dentro, el atacante busca escalar sus privilegios para controlar la red y los datos, lo que puede tener consecuencias devastadoras para la organización afectada.</p>
 
-                <p><span class="highlighted-subtitle">Impacto en la seguridad:</span>
-                    El acceso exitoso significa que las defensas iniciales del sistema han fallado. Dependiendo del nivel de acceso obtenido,
-                     el atacante puede moverse lateralmente por la red, instalar malware o robar datos.      
-                </p>
                 <section>
                     <h2>Tipos de Ataques</h2>
                     <div class="card">
-                        <h3 class="card-title">XSS (Cross-Site Scripting)</h3>
-                        <p>Inyección de scripts maliciosos en páginas web.</p>
+                        <h3 class="card-title">1. XSS (Cross-Site Scripting)</h3>
+                        <p>El Cross-Site Scripting (XSS) es un ataque en el que un atacante inyecta scripts maliciosos en páginas web. Estos scripts se ejecutan en el navegador de otros usuarios, lo que les permite robar información confidencial, como cookies de sesión, y realizar acciones maliciosas en nombre de los usuarios.</p>
+                        <h4>Tipos de XSS:</h4>
+                        <ul>
+                            <li><strong>Reflejado:</strong> El script malicioso se pasa en la URL y se ejecuta en el navegador cuando el usuario visita el enlace. Este tipo de ataque suele requerir que el usuario haga clic en un enlace malicioso.</li>
+                            <li><strong>Almacenado:</strong> El código malicioso se guarda en la base de datos y se ejecuta cada vez que se carga la página vulnerable. Este tipo es particularmente peligroso porque puede afectar a múltiples usuarios sin que hagan clic en ningún enlace malicioso.</li>
+                            <li><strong>DOM-Based:</strong> El script malicioso se ejecuta cuando el navegador manipula el DOM (Document Object Model), sin necesidad de una respuesta del servidor. Este tipo de XSS es más difícil de detectar porque el payload malicioso no se envía al servidor.</li>
+                        </ul>
+                        <h4>Impacto del XSS:</h4>
+                        <ul>
+                            <li>Robo de sesiones y suplantación de identidad</li>
+                            <li>Modificación del contenido de la página web</li>
+                            <li>Redirección de usuarios a sitios maliciosos</li>
+                            <li>Instalación de malware en el equipo de la víctima</li>
+                        </ul>
                     </div>
                     <div class="card">
-                        <h3 class="card-title">SQL Injection</h3>
-                        <p>Inserción de código SQL malicioso para acceder a bases de datos.</p>
+                        <h3 class="card-title">2. SQL Injection</h3>
+                        <p>La SQL Injection es un ataque que permite al atacante inyectar código SQL malicioso en una entrada de usuario (como un formulario de login o un campo de búsqueda) para interactuar de forma no autorizada con una base de datos. Esto puede permitir al atacante leer, modificar o borrar datos sensibles.</p>
+                        <h4>Tipos de SQL Injection:</h4>
+                        <ul>
+                            <li><strong>Inyección Ciega:</strong> El atacante no recibe errores directamente, pero puede hacer que el sistema reaccione de manera diferente dependiendo de la consulta maliciosa, lo que le permite inferir la estructura de la base de datos. Este tipo de ataque es más lento pero puede ser muy efectivo.</li>
+                            <li><strong>Inyección de Unión (Union-based):</strong> Permite que el atacante combine los resultados de varias consultas SQL para obtener información adicional de la base de datos. Este método es más rápido y directo que la inyección ciega.</li>
+                            <li><strong>Inyección de Tiempo (Time-based):</strong> El atacante utiliza retrasos en las respuestas del servidor para inferir información sobre la base de datos. Este método es útil cuando no hay respuestas visibles del servidor.</li>
+                        </ul>
+                        <h4>Impacto de SQL Injection:</h4>
+                        <ul>
+                            <li>Acceso no autorizado a datos sensibles</li>
+                            <li>Modificación o eliminación de registros de la base de datos</li>
+                            <li>Ejecución de comandos administrativos en la base de datos</li>
+                            <li>Compromiso de la integridad y confidencialidad de los datos</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">3. CSRF (Cross-Site Request Forgery)</h3>
+                        <p>El Cross-Site Request Forgery (CSRF) es un ataque en el que un atacante engaña a un usuario autenticado para que realice acciones no deseadas en una aplicación web en la que está autenticado, sin su consentimiento. El atacante aprovecha la sesión activa del usuario para realizar acciones maliciosas.</p>
+                        <h4>Cómo funciona:</h4>
+                        <p>Si el usuario tiene una sesión activa en una aplicación web (por ejemplo, un banco), el atacante puede hacer que el navegador del usuario envíe una solicitud que realice una acción no deseada, como transferir dinero, cambiar configuraciones de cuenta, etc.</p>
+                        <h4>Etapas de un ataque CSRF:</h4>
+                        <ol>
+                            <li>El usuario inicia sesión en un sitio web legítimo (por ejemplo, su banco en línea).</li>
+                            <li>Sin cerrar sesión, el usuario visita un sitio web malicioso.</li>
+                            <li>El sitio malicioso contiene código que envía una solicitud al sitio legítimo.</li>
+                            <li>El navegador del usuario envía automáticamente las cookies de sesión con la solicitud.</li>
+                            <li>El sitio legítimo procesa la solicitud como si fuera iniciada por el usuario.</li>
+                        </ol>
+                        <h4>Impacto de CSRF:</h4>
+                        <ul>
+                            <li>Realización de transacciones financieras no autorizadas</li>
+                            <li>Cambios en la configuración de la cuenta del usuario</li>
+                            <li>Publicación de contenido no autorizado en nombre del usuario</li>
+                            <li>Compromiso de la integridad de las acciones del usuario en la aplicación web</li>
+                        </ul>
                     </div>
                 </section>
 
                 <section>
-                    <h2>Prevención</h2>
+                    <h2>Prevención de los Ataques</h2>
+                    <div class="card">
+                        <h3 class="card-title">Prevención de XSS:</h3>
+                        <ul>
+                            <li><strong>Sanitización y Escapado de Entradas:</strong> Utiliza funciones para escapar caracteres especiales y sanitizar entradas de usuarios antes de mostrarlas en las páginas. Esto incluye convertir caracteres como &lt;, &gt;, &amp;, ', y " en sus equivalentes HTML.</li>
+                            <li><strong>Content Security Policy (CSP):</strong> Configura una política de seguridad para limitar los tipos de contenido que pueden ser ejecutados, reduciendo el riesgo de que scripts maliciosos se ejecuten en el navegador. Por ejemplo, puedes especificar qué dominios son fuentes confiables para scripts, estilos, imágenes, etc.</li>
+                            <li><strong>Validación de Entrada:</strong> Asegúrate de que los datos que se reciben del usuario sean los esperados (por ejemplo, solo texto, números, etc.), evitando el uso de scripts. Implementa una validación tanto en el cliente como en el servidor.</li>
+                            <li><strong>HttpOnly Flags:</strong> Utiliza flags HttpOnly en las cookies para evitar que sean accesibles mediante scripts del lado del cliente, lo que dificulta el robo de sesiones mediante XSS.</li>
+                            <li><strong>Implementación de X-XSS-Protection:</strong> Configura el encabezado HTTP X-XSS-Protection para activar el filtro XSS integrado en los navegadores modernos.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Prevención de SQL Injection:</h3>
+                        <ul>
+                            <li><strong>Consultas Parametrizadas:</strong> Utiliza consultas parametrizadas o procedimientos almacenados en lugar de concatenar directamente los datos del usuario en las consultas SQL. Esto separa los datos de la estructura de la consulta, evitando que los datos del usuario se interpreten como parte del comando SQL.</li>
+                            <li><strong>Validación de Datos:</strong> Asegúrate de que las entradas de los usuarios sean adecuadas y estrictamente necesarias para las consultas (por ejemplo, un ID de número entero no debería contener caracteres alfabéticos). Implementa una validación rigurosa tanto en el cliente como en el servidor.</li>
+                            <li><strong>Uso de ORM:</strong> Los frameworks de mapeo objeto-relacional (ORM) abstraen la interacción con la base de datos, lo que ayuda a evitar la inyección de SQL. Sin embargo, asegúrate de utilizar correctamente las funciones del ORM para mantener la seguridad.</li>
+                            <li><strong>Principio de Menor Privilegio:</strong> Utiliza cuentas de base de datos con los mínimos privilegios necesarios para la aplicación. Esto limita el daño potencial en caso de una inyección SQL exitosa.</li>
+                            <li><strong>Escapado de Caracteres Especiales:</strong> Escapa los caracteres especiales en las entradas del usuario antes de incluirlos en las consultas SQL. Cada sistema de gestión de bases de datos tiene sus propias funciones de escapado.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">Prevención de CSRF:</h3>
+                        <ul>
+                            <li><strong>Tokens CSRF:</strong> Genera un token único en cada solicitud que se utiliza en los formularios, y valida ese token en el servidor para asegurarse de que la solicitud proviene de la aplicación legítima. Este token debe ser impredecible y único para cada sesión de usuario.</li>
+                            <li><strong>Verificación del Referer o Origin:</strong> Asegúrate de que la solicitud provenga de una fuente confiable, verificando los encabezados Referer o Origin de la solicitud. Ten en cuenta que algunos usuarios pueden tener deshabilitado el envío del encabezado Referer por razones de privacidad.</li>
+                            <li><strong>Uso de Métodos Seguros:</strong> Asegúrate de que las operaciones que modifican datos solo se realicen a través de métodos HTTP como POST, y no con GET, que puede ser fácilmente forzado a través de solicitudes fraudulentas.</li>
+                            <li><strong>SameSite Cookie Attribute:</strong> Utiliza el atributo SameSite en las cookies para controlar cómo se envían en solicitudes de origen cruzado, lo que puede prevenir ataques CSRF.</li>
+                            <li><strong>Custom Request Headers:</strong> Incluye encabezados personalizados en las solicitudes AJAX que no pueden ser fácilmente replicados por sitios maliciosos.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Recomendaciones Generales de Seguridad</h2>
                     <ul>
-                        <li>Validar y sanear entradas del usuario.</li>
-                        <li>Utilizar consultas parametrizadas para prevenir inyecciones SQL.</li>
-                        <li>Escapar caracteres especiales en formularios para prevenir XSS.</li>
+                        <li><strong>Principio de menor privilegio:</strong> Asegúrate de que las aplicaciones y bases de datos tengan los permisos más restrictivos posibles. Esto limita el alcance potencial de un ataque exitoso.</li>
+                        <li><strong>Auditorías de seguridad regulares:</strong> Realiza auditorías de seguridad periódicas y pruebas de penetración para encontrar y corregir vulnerabilidades. Estas auditorías deben incluir tanto evaluaciones automáticas como manuales.</li>
+                        <li><strong>Actualizaciones y parches:</strong> Mantén siempre actualizado el software y las dependencias para protegerte contra vulnerabilidades conocidas. Establece un proceso regular de revisión y aplicación de parches de seguridad.</li>
+                        <li><strong>Educación y concienciación:</strong> Capacita regularmente a los desarrolladores y al personal de TI sobre las últimas amenazas de seguridad y las mejores prácticas para prevenirlas.</li>
+                        <li><strong>Implementación de WAF:</strong> Utiliza un Web Application Firewall (WAF) para añadir una capa adicional de protección contra ataques web comunes.</li>
+                        <li><strong>Monitoreo continuo:</strong> Implementa sistemas de detección de intrusiones (IDS) y sistemas de prevención de intrusiones (IPS) para identificar y responder rápidamente a actividades sospechosas.</li>
+                        <li><strong>Gestión segura de sesiones:</strong> Implementa mecanismos robustos para la gestión de sesiones, incluyendo el uso de identificadores de sesión seguros y la invalidación de sesiones después de un período de inactividad.</li>
+                        <li><strong>Cifrado de datos sensibles:</strong> Asegúrate de que todos los datos sensibles estén cifrados tanto en tránsito como en reposo, utilizando algoritmos de cifrado fuertes y actualizados.</li>
                     </ul>
                 </section>
 
-                <section>
-                    <h2>Video Ataque e Injection</h2>
-                    <p>En el siguiente video se realiza una demostración sobre Ataques XSS y SQL Injection:</p>
-                    <div class="card">
-                        <div class="video-container">
-                            <iframe width="560" height="315" 
-                            src="https://www.youtube.com/embed/Jla3_0OhdV0" 
-                            title="YouTube video player" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                            </iframe>
-                        </div>
-                        
 
-                    </div>
-                </section>
             </div>
         </div>
     </main>
